@@ -12,7 +12,7 @@ const quiz = [
     answers: [ '耶和华', '大卫', '耶稣', '彼得'],
     correct: '耶稣'
   }, {
-    question: '上帝的朋友是谁？',
+    question: '耶和华的朋友是谁？',
     answers: [ '亚当', '亚伯拉罕', '撒但', '该隐'],
     correct: '亚伯拉罕'
   }, {
@@ -20,7 +20,7 @@ const quiz = [
      answers: [ '166000', '144000', '1200', '144001'],
      correct: '144001'
 },{
-  question: '王国的君王是谁？',
+  question: '上帝王国的君王是谁？',
   answers: [ '大卫', '所罗门', '耶稣', '犹大'],
   correct: '耶稣'
 }, {
@@ -34,6 +34,10 @@ const quiz = [
 }, {
   question: '出卖耶稣的是谁？',
   answers: [ '保罗', '犹大', '彼得', '约翰'],
+  correct: '犹大'
+}, {
+  question: '撒母耳的母亲是谁？',
+  answers: [ '玛丽亚', '哈拿', '路得', '夏娃'],
   correct: '犹大'
 }
   ];
@@ -64,23 +68,23 @@ const goToNext = () => {
   if(quizCount < quizLen){
     init(quizCount);
   } else {
-    // $window.alert('クイズ終了！');
+    // $window.alert('结束了！');
     showEnd();
   }
 };
 
 const judge = (elm) => {
   if(elm.textContent === quiz[quizCount].correct){
-    $window.alert('正解!');
+    $window.alert('正确!');
     score++;
   } else {
-    $window.alert('不正解!');
+    $window.alert('不正确!');
   }
   goToNext();
 };
 
 const showEnd = () => {
-  $question.textContent = '終了！あなたのスコアは' + score + '/' + quizLen + 'です';
+  $question.textContent = '恭喜你！你的成绩' + score + '/' + quizLen + '！';
   
   const $items = $doc.getElementById('js-items');
   $items.style.visibility = 'hidden';
