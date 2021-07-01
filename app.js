@@ -38,7 +38,7 @@ const quiz = [
 }, {
   question: '撒母耳的母亲是谁？',
   answers: [ '玛丽亚', '哈拿', '路得', '夏娃'],
-  correct: '犹大'
+  correct: '哈拿'
 }
   ];
 
